@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent">
+
+    <include layout="@layout/view_toolbar"/>
+
+    <com.jw.sight.view.MultiSwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_meizhi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/view_padding_3"
+            android:paddingRight="@dimen/view_padding_3"/>
+
+    </com.jw.sight.view.MultiSwipeRefreshLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/main_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="@dimen/view_margin_10"
+        android:layout_marginRight="@dimen/view_margin_10"
+        android:clickable="true"
+        android:elevation="4dp"
+        android:src="@mipmap/ic_launcher"
+        app:borderWidth="0dp"
+        app:elevation="4dp"
+        app:layout_anchor="@id/swipe_refresh_layout"
+        app:layout_anchorGravity="right|bottom"
+        app:layout_behavior="com.jw.sight.widget.ScrollAwareFABBehavior"/>
+
+</android.support.design.widget.CoordinatorLayout>
+
