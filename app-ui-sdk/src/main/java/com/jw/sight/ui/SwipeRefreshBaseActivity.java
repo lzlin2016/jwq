@@ -7,8 +7,6 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import com.jw.sight.R;
 import com.jw.sight.view.MultiSwipeRefreshLayout;
 
-import butterknife.ButterKnife;
-
 /**
  * Created by Sight-WXC on 2016/6/30 0030.
  * 支持下拉刷新的布局
@@ -24,9 +22,11 @@ public abstract class SwipeRefreshBaseActivity extends ToolbarActivity implement
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
-        ButterKnife.bind(this);
-        mSwipeRefreshLayout = (MultiSwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
+
     }
+
+    public abstract   void  getSwipeRefreshLayout();
+
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
